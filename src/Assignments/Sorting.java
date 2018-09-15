@@ -28,7 +28,7 @@ public class Sorting {
 		//Sorting using the Insertion Sort Method.
 		{
 			//Generating a random Array.
-			arr = this.RandomArray(arrLength);
+			arr = Sorting.RandomArray(arrLength);
 			
 			startTime = System.currentTimeMillis();		
 			this.InsertionSort(arr);
@@ -41,7 +41,7 @@ public class Sorting {
 		//Sorting using the built-in Sort Method.
 		{
 			//Generating New array with the same length.
-			arr = this.RandomArray(arrLength);
+			arr = Sorting.RandomArray(arrLength);
 			
 			startTime = System.currentTimeMillis();
 			Arrays.sort(arr);
@@ -56,14 +56,25 @@ public class Sorting {
 	 * @param arrLength = length of the Array.
 	 * @return Array filled with random values.
 	 */
-	private int[] RandomArray(int arrLength) 
+	public static int[] RandomArray(int arrLength, int... length) 
 	{
 		int[] randomArray = new int[arrLength]; //Array to be filled with Random values.
-		
-		for(int i = 0; i < arrLength; i++) 
+		if(length.length == 1) 
 		{
-			randomArray[i] = (int)(Integer.MAX_VALUE * Math.random());
+			for(int i = 0; i < arrLength; i++) 
+			{
+				randomArray[i] = (int)(length[0] * Math.random());
+			}
 		}
+		
+		else 
+		{
+			for(int i = 0; i < arrLength; i++) 
+			{
+				randomArray[i] = (int)(Integer.MAX_VALUE * Math.random());
+			}
+		}
+		
 		
 		return randomArray;
 		
