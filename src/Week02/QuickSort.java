@@ -20,6 +20,7 @@ public class QuickSort {
 		QuickSort.QuickSortProcess(A, 0, A.length - 1);
 	}
 	
+	
 	/**
 	 * Places the pivot in the correct position, with smaller numbers on the left of the pivot, and larger numbers on the right. 
 	 * @param A The array in which the pivot will be placed in the correct position.

@@ -6,10 +6,15 @@ public class MainWeek02 {
 	public static void main(String[] args) {
 		
 
-		//new TowerOfHanoi(4, 0 , 1 , 2);
-
+//		new TowerOfHanoi(4, 0 , 1 , 2);
+//
+//		AlgorithmsComparison.QuickVsQuick3();
+//		AlgorithmsComparison.CompareQuickSort();
+//		AlgorithmsComparison.CompareQuick3Sort();
 		
-		AlgorithmsComparison.QuickVsQuick3();
+//		LinkedList ls = new LinkedList("Tarek", "A", "UoPeople");
+//		ls.PrintItems();
+		
 	}
 	
 	
