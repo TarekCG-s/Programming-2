@@ -9,7 +9,7 @@ public class MainWeek02 {
 		//new TowerOfHanoi(4, 0 , 1 , 2);
 
 		
-		AlgorithmsComparison.CompareQuickSort();
+		AlgorithmsComparison.QuickVsQuick3();
 	}
 	
 	
