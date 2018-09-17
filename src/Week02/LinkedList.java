@@ -7,18 +7,19 @@ package Week02;
  */
 public class LinkedList {
 	
+	
 	private class Node 
 	{
 		String item;
 		Node next;
 	}
 	
+	
 	/**
 	 * The root of the list.
 	 */
 	private Node head;
 	
-
 	
 	/**
 	 * Creates new Linked lists and inserts items as many as the user wants.
@@ -31,6 +32,7 @@ public class LinkedList {
 			this.InsertItem(items[i]);
 		}
 	}
+	
 	
 	/**
 	 * Inserts an item in the appropriate location in the list to keep it sorted.
@@ -79,6 +81,7 @@ public class LinkedList {
 		}
 	}
 	
+	
 	/**
 	 * Deletes an item from the list and keep it sorted.
 	 * @param item is the item to be deleted from the list.
@@ -117,6 +120,7 @@ public class LinkedList {
 		System.out.println("Item can't be found!"); 
 		return false;
 	}
+	
 	
 	/**
 	 * Prints items of the list in order.
