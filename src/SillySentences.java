@@ -1,4 +1,4 @@
-package Week02;
+
 /*
  * 	<sentence> ::= <simple_sentence> [ <conjunction> <sentence> ]
 
@@ -49,19 +49,36 @@ public class SillySentences {
 
 	private static final String[] conjunctions = {"and" , "or", "but", "because"};	
 
-	
+	public static int numSentences = 0; //number of constructed phrases in order to avoid having many sentences in a phrase.
 
+	public static void main(String[] args) 
+	{
+		while (true) {
+			SimpleSentence();
+			System.out.println(".\n\n");
+			numSentences = 0;
+			
+			try {
+				Thread.sleep(3000);
+			}
+			catch (InterruptedException e) {
+			}
+		}
+	}
+	
+	
 	/**
 	 * Generates simple sentences randomly.
 	 */
 	public static void SimpleSentence() 
 	{
+		numSentences++;
 
 		NounPhrase();
 		VerbPhrase();
 
 		//Adds another sentence randomly.
-		if(Math.random() > 0.75f) 
+		if(Math.random() > 0.75f && numSentences < 3) 
 		{
 			int conjunction = (int)(Math.random() * conjunctions.length);
 			System.out.printf(" %s ",conjunctions[conjunction]);
@@ -91,7 +108,7 @@ public class SillySentences {
 			int commonNoun = (int)(Math.random() * commonNouns.length);
 			System.out.printf("%s ",commonNouns[commonNoun]);
 
-			if(Math.random() > 0.5f) 
+			if(Math.random() > 0.5f && numSentences < 3 ) 
 			{
 				System.out.print("- who ");
 				VerbPhrase();
@@ -112,25 +129,25 @@ public class SillySentences {
 			System.out.printf("%s",intransVerbs[intransVerb]);
 		}
 
-		else if (probabilty < 0.5f) 
+		else if (probabilty < 0.5f && numSentences < 3) 
 		{
 			int transVerb = (int)(Math.random() * transVerbs.length);
 			System.out.printf("%s ",transVerbs[transVerb]);
 			NounPhrase();
 		}
 
-		else if (probabilty < 0.75f) 
+		else if (probabilty < 0.75f && numSentences < 3) 
+		{
+			System.out.print("believes that ");
+			SimpleSentence();			
+		}
+
+		else 
 		{
 			System.out.print("is ");
 
 			int adjective = (int)(Math.random() * adjectives.length);
 			System.out.printf("%s ",adjectives[adjective]);
-		}
-
-		else 
-		{
-			System.out.print("believes that ");
-			SimpleSentence();
 		}
 
 	}

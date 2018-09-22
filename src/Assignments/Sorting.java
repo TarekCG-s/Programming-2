@@ -74,8 +74,7 @@ public class Sorting {
 				randomArray[i] = (int)(Integer.MAX_VALUE * Math.random());
 			}
 		}
-		
-		
+		int x = Integer.MAX_VALUE;		
 		return randomArray;
 		
 	}
